@@ -1,0 +1,274 @@
+/* START GLOBAL STYLE */
+body {
+  font-family: ui-sans-serif, system-ui, sans-serif;
+  font-size: 14px;
+  background-image: linear-gradient(to right, #fff7ed, #fffbeb, #fefce8);
+}
+/* END   GLOBAL STYLE */
+/* START READY-TO-GO CLASSES */
+.text-gray {
+  color: #6a7282 !important;
+}
+.text-gray-body {
+  color: #364153 !important;
+}
+.mt-4-half {
+  margin-block-start: 2rem !important;
+}
+.mb-2-half {
+  margin-block-end: 0.75rem !important;
+}
+.p-2-half {
+  padding: 0.75rem !important;
+}
+.px-2-half {
+  padding-inline: 0.75rem !important;
+}
+.py-2-half {
+  padding-block: 0.75rem !important;
+}
+.gap-2-half {
+  gap: 0.75rem !important;
+}
+.fs-7 {
+  font-size: 0.875rem !important;
+}
+.fs-8 {
+  font-size: 12px !important;
+}
+.shadow-1 {
+  box-shadow: 0 20px 25px -5px #0000001a, 0 8px 10px -6px #0000001a !important;
+}
+.shadow-2 {
+  box-shadow: 0 10px 15px -3px #0000001a, 0 4px 6px -4px #0000001a !important;
+}
+.shadow-3 {
+  box-shadow: 0 1px 3px 0 #0000001a, 0 1px 2px -1px #0000001a !important;
+}
+.rounded-3-half {
+  border-radius: 0.75rem !important;
+}
+.rounded-4-half {
+  border-radius: 1.5rem !important;
+}
+.unstyled-button {
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  margin: 0;
+  color: inherit;
+  font: inherit;
+  text-align: inherit;
+  box-shadow: none;
+  outline: none;
+  appearance: none;
+  cursor: pointer;
+}
+.transition {
+  transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+}
+/* END   READY-TO-GO CLASSES */
+/* START HEADER SECTION */
+#header {
+  border-bottom: 1px solid #ffedd4;
+}
+#header .logo {
+  width: 3rem;
+  height: 3rem;
+  background-image: linear-gradient(to right, #ff6900, #fb2c36);
+}
+#header .links {
+  border-top: 1px solid #ffedd4;
+}
+#header .link {
+  color: #4a5565;
+}
+#header .link:hover {
+  color: #f54a00;
+}
+#header .link .profile-avatar {
+  width: 2rem;
+  height: 2rem;
+  border: 2px solid #ffb86a;
+}
+#header .link .profile-avatar img {
+  width: 100%;
+  height: 100%;
+}
+/* END   HEADER SECTION */
+/* START MAIN SECTION */
+#recipe .overflow-y-auto {
+  scrollbar-width: thin;
+  scrollbar-color: #fe886a4d transparent;
+}
+#recipe .recipe-image {
+  width: 100%;
+  height: 400px;
+}
+#recipe .recipe-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+#recipe .rating .fa-star {
+  color: #fdc700;
+}
+#recipe .rating .fa-clock {
+  color: #ff6900;
+}
+#recipe .rating .fa-fire-burner {
+  color: #fb2c36;
+}
+#recipe .rating .fa-users {
+  color: #2b7fff;
+}
+#recipe .difficulty-badge {
+  color: #008236;
+  background-color: #dcfce7;
+}
+#recipe .category-badge {
+  color: #1447e6;
+  background-color: #dbeafe;
+}
+#recipe .links button {
+  width: 3rem;
+  height: 3rem;
+  background-color: #ffedd4;
+  color: #f54a00;
+}
+#recipe .links button:hover {
+  background-color: #ffd7a8;
+}
+#recipe #time-warning {
+  --bs-heading-color: #9f0712;
+  --bs-alert-color: #e7000b;
+  --bs-alert-bg: #fef2f2;
+  border: 0;
+  border-inline-start: 4px solid #fb2c36;
+}
+#recipe #time-warning .alert-danger-icon {
+  color: #fb2c36;
+}
+#recipe .tabs-container .nav-link {
+  --bs-nav-link-color: #6a7282;
+  --bs-nav-underline-link-active-color: #f54a00;
+  --bs-nav-link-hover-color: #364153;
+}
+#recipe .tabs-container .nav-underline .nav-link:focus,
+#recipe .tabs-container .nav-underline .nav-link:hover {
+  border-bottom-color: transparent;
+}
+#recipe .tabs-container .nav-underline .nav-link.active {
+  border-bottom-color: #f54a00;
+}
+#recipe .tabs-container .nav-underline {
+  border-bottom: 1px solid #ebe6e7;
+}
+/* START INGREDIENTS TAB */
+#recipe #ingredients > div {
+  height: 350px;
+  background-image: linear-gradient(to right, #fff7ed, #fffbeb);
+}
+#recipe #ingredients ul li div {
+  width: 1.5rem;
+  height: 1.5rem;
+  background-color: #ff6900;
+}
+#recipe #ingredients ul li:not(:last-child) {
+  margin-block-end: 0.75rem;
+}
+/* END   INGREDIENTS TAB */
+/* START INSTRUCTIONS TAB */
+#recipe #instructions > div {
+  height: 350px;
+}
+#recipe #instructions ul li div {
+  width: 3rem;
+  height: 3rem;
+  background-color: #ff6900;
+}
+#recipe #instructions ul li:not(:last-child) {
+  margin-block-end: 1.5rem;
+}
+/* END   INSTRUCTIONS TAB */
+/* START NUTRITION TAB */
+#recipe #nutrition > div {
+  height: 350px;
+}
+#recipe #nutrition div div div > div {
+  background-color: #fbf9fa;
+}
+#recipe #nutrition .nutrition-icon {
+  width: 2.5rem;
+  height: 2.5rem;
+}
+#recipe #nutrition .calories .nutrition-icon {
+  color: #f54a00;
+  background-color: #ffedd4;
+}
+#recipe #nutrition .protein .nutrition-icon {
+  color: #155dfc;
+  background-color: #dbeafe;
+}
+#recipe #nutrition .carbohydrates .nutrition-icon {
+  color: #d08700;
+  background-color: #fef9c2;
+}
+#recipe #nutrition .fat .nutrition-icon {
+  color: #e7000b;
+  background-color: #ffe2e2;
+}
+#recipe #nutrition .fiber .nutrition-icon {
+  color: #00a63e;
+  background-color: #dcfce7;
+}
+#recipe #nutrition .sodium .nutrition-icon {
+  color: #e60076;
+  background-color: #fce7f3;
+}
+/* END   NUTRITION TAB */
+/* START TIPS TAB */
+#recipe .alert-warning {
+  --bs-alert-bg: #fffbeb;
+  border: 0;
+  border-inline-start: 4px solid #ffb900;
+}
+#recipe .alert-warning .alert-warning-icon {
+  color: #e17100;
+}
+/* END   TIPS TAB */
+#recipe .try-another-btn-container {
+  border-top: 1px solid #ebe6e7;
+}
+#recipe #try-another-btn {
+  background-image: linear-gradient(to right, #ff6900, #fb2c36);
+}
+#recipe #try-another-btn:hover {
+  box-shadow: 0 20px 25px -5px #0000001a, 0 8px 10px -6px #0000001a !important;
+  background-image: linear-gradient(to right, #f54a00, #e7000b);
+  scale: 1.05;
+}
+/* END   MAIN SECTION */
+/* START MEDIA QUERY */
+@media (min-width: 768px) {
+  body {
+    font-size: 16px;
+  }
+  #header .links {
+    border-top: none;
+  }
+  #header .link .profile-avatar {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+}
+@media (min-width: 992px) {
+  #recipe {
+    /* height: calc(100vh - 150px); */
+    height: 750px;
+  }
+  #recipe .recipe-image {
+    height: 100%;
+  }
+}
+/* END   MEDIA QUERY */
