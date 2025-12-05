@@ -26,8 +26,8 @@ function updateReciteData(recipe) {
   document.getElementById(
     "rating-quantity"
   ).innerText = `(${recipe.rating.count} reviews)`;
-  document.getElementById("preptime").innerText = recipe.preptime;
-  document.getElementById("cooktime").innerText = recipe.cooktime;
+  document.getElementById("preptime").innerText = `${recipe.preptime} mins`;
+  document.getElementById("cooktime").innerText = `${recipe.cooktime} mins`;
   document.getElementById("servings").innerText = `${recipe.servings} people`;
   document.getElementById("recipe-image").src = recipe.image;
   document.getElementById("ingredients-list").innerHTML = recipe.ingredients
@@ -42,11 +42,11 @@ function updateReciteData(recipe) {
     .join("");
   document.getElementById("instructions-list").innerHTML = recipe.instructions
     .map((instruction, index) => {
-      return `<li class="d-flex align-items-center gap-3">
-                <div class="d-flex align-items-center justify-content-center rounded-4 text-white fs-5 fw-bold">
+      return `<li class="d-flex align-items-center justify-content-start gap-3">
+                <div class="d-flex align-items-center justify-content-center rounded-4 text-white fs-5 fw-bold flex-shrink-0">
                     ${index + 1}
                 </div>
-                <span class="text-gray-body">${instruction}</span>
+                <span class="text-gray-body d-block">${instruction}</span>
             </li>`;
     })
     .join("");
@@ -72,7 +72,7 @@ function updateReciteData(recipe) {
     </div>`;
     })
     .join("");
-    if (+recipe.cooktime.split(" ")[0] + +recipe.preptime.split(" ")[0] >= 45) {
+    if (+recipe.cooktime + +recipe.preptime >= 45) {
         document.getElementById("time-warning").classList.remove("d-none");
     } else {
         document.getElementById("time-warning").classList.add("d-none");
@@ -87,13 +87,13 @@ var recipes = [
     description: "A classic Italian pasta dish with eggs, cheese, and pancetta",
     category: "Italian",
     difficulty: "Easy",
-    image: "./img/Creamy-Spaghetti-Carbonara.jfif",
+    image: "./img/creamy-spaghetti-carbonara.webp",
     rating: {
       average: 4.5,
       count: 120,
     },
-    preptime: "15 mins",
-    cooktime: "20 mins",
+    preptime: 15,
+    cooktime: 20,
     servings: 4,
     ingredients: [
       "400g spaghetti pasta",
@@ -113,7 +113,7 @@ var recipes = [
       "Serve immediately with extra cheese and black pepper on top. Enjoy your authentic carbonara!",
     ],
     nutrition: {
-      calories: "520 kcal",
+      calories: "520kcal",
       carbohydrates: "28g",
       protein: "62g",
       fat: "18g",
@@ -140,8 +140,8 @@ var recipes = [
       average: 4.7,
       count: 250,
     },
-    preptime: "45 mins",
-    cooktime: "60 mins",
+    preptime: 45,
+    cooktime: 60,
     servings: 8,
     ingredients: [
       "12 lasagna noodles",
@@ -163,7 +163,7 @@ var recipes = [
       "Bake for 45-60 minutes, or until bubbling and golden brown.",
     ],
     nutrition: {
-      calories: "650 kcal",
+      calories: "650kcal",
       carbohydrates: "45g",
       protein: "40g",
       fat: "35g",
@@ -183,13 +183,13 @@ var recipes = [
       "A nutritious, comforting, and flavorful vegan soup packed with vegetables and lentils.",
     category: "Vegan",
     difficulty: "Easy",
-    image: "./img/hearty-lentil-soup.jpg",
+    image: "./img/hearty-lentil-soup.webp",
     rating: {
       average: 4.3,
       count: 95,
     },
-    preptime: "15 mins",
-    cooktime: "40 mins",
+    preptime: 15,
+    cooktime: 40,
     servings: 6,
     ingredients: [
       "1 tbsp olive oil",
@@ -211,7 +211,7 @@ var recipes = [
       "Season with salt and pepper. Serve hot with crusty bread.",
     ],
     nutrition: {
-      calories: "280 kcal",
+      calories: "280kcal",
       carbohydrates: "45g",
       protein: "15g",
       fat: "5g",
@@ -236,8 +236,8 @@ var recipes = [
       average: 4.8,
       count: 310,
     },
-    preptime: "30 mins",
-    cooktime: "35 mins",
+    preptime: 30,
+    cooktime: 35,
     servings: 4,
     ingredients: [
       "600g chicken breast, cubed",
@@ -259,7 +259,7 @@ var recipes = [
       "Garnish with fresh cilantro and serve hot with rice or naan.",
     ],
     nutrition: {
-      calories: "580 kcal",
+      calories: "580kcal",
       carbohydrates: "15g",
       protein: "55g",
       fat: "35g",
@@ -279,13 +279,13 @@ var recipes = [
       "Soft, chewy, and perfectly browned chocolate chip cookies, a timeless American dessert.",
     category: "Dessert",
     difficulty: "Easy",
-    image: "./img/classic-chocolate-chip-cookies.jpg",
+    image: "./img/classic-chocolate-chip-cookies.webp",
     rating: {
       average: 4.9,
       count: 450,
     },
-    preptime: "15 mins",
-    cooktime: "10 mins",
+    preptime: 15,
+    cooktime: 10,
     servings: 24,
     ingredients: [
       "2 1/4 cups all-purpose flour",
@@ -307,7 +307,7 @@ var recipes = [
       "Bake for 9-11 minutes or until golden brown. Let cool on the baking sheet for 5 minutes before transferring to a wire rack.",
     ],
     nutrition: {
-      calories: "180 kcal",
+      calories: "180kcal",
       carbohydrates: "25g",
       protein: "2g",
       fat: "9g",
@@ -332,8 +332,8 @@ var recipes = [
       average: 4.4,
       count: 80,
     },
-    preptime: "15 mins",
-    cooktime: "15 mins",
+    preptime: 15,
+    cooktime: 15,
     servings: 4,
     ingredients: [
       "1 cup quinoa, rinsed",
@@ -355,7 +355,7 @@ var recipes = [
       "Serve immediately or chill for later. Tastes best after 30 minutes of sitting.",
     ],
     nutrition: {
-      calories: "350 kcal",
+      calories: "350kcal",
       carbohydrates: "40g",
       protein: "12g",
       fat: "16g",
@@ -380,8 +380,8 @@ var recipes = [
       average: 4.6,
       count: 180,
     },
-    preptime: "30 mins",
-    cooktime: "180 mins",
+    preptime: 30,
+    cooktime: 180,
     servings: 6,
     ingredients: [
       "1.5 kg beef bones (marrow and knuckles)",
@@ -407,7 +407,7 @@ var recipes = [
       "Serve with a platter of garnishes.",
     ],
     nutrition: {
-      calories: "400 kcal",
+      calories: "400kcal",
       carbohydrates: "45g",
       protein: "35g",
       fat: "10g",
@@ -432,8 +432,8 @@ var recipes = [
       average: 4.7,
       count: 150,
     },
-    preptime: "10 mins",
-    cooktime: "15 mins",
+    preptime: 10,
+    cooktime: 15,
     servings: 2,
     ingredients: [
       "2 salmon fillets (about 170g each)",
@@ -452,7 +452,7 @@ var recipes = [
       "Serve immediately with a side of vegetables.",
     ],
     nutrition: {
-      calories: "420 kcal",
+      calories: "420kcal",
       carbohydrates: "5g",
       protein: "40g",
       fat: "25g",
@@ -477,8 +477,8 @@ var recipes = [
       average: 4.6,
       count: 110,
     },
-    preptime: "20 mins",
-    cooktime: "90 mins",
+    preptime: 20,
+    cooktime: 90,
     servings: 4,
     ingredients: [
       "1.5 kg chicken pieces (thighs and drumsticks)",
@@ -501,7 +501,7 @@ var recipes = [
       "Serve hot, traditionally with boiled potatoes or mashed potatoes.",
     ],
     nutrition: {
-      calories: "550 kcal",
+      calories: "550kcal",
       carbohydrates: "20g",
       protein: "45g",
       fat: "30g",
@@ -526,8 +526,8 @@ var recipes = [
       average: 4.3,
       count: 75,
     },
-    preptime: "15 mins",
-    cooktime: "15 mins",
+    preptime: 15,
+    cooktime: 15,
     servings: 3,
     ingredients: [
       "400g extra-firm tofu, pressed and cubed",
@@ -550,7 +550,7 @@ var recipes = [
       "Toss quickly to coat and cook until the sauce thickens slightly, about 1 minute. Serve immediately over rice.",
     ],
     nutrition: {
-      calories: "380 kcal",
+      calories: "380kcal",
       carbohydrates: "35g",
       protein: "25g",
       fat: "15g",

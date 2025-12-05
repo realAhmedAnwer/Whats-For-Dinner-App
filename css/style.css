@@ -182,7 +182,7 @@ body {
 #recipe #instructions > div {
   height: 350px;
 }
-#recipe #instructions ul li div {
+#recipe #instructions ul li > div {
   width: 3rem;
   height: 3rem;
   background-color: #ff6900;
