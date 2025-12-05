@@ -7,6 +7,14 @@ function setTextById(id, text) {
     console.warn('Element with id "' + id + '" not found in DOM.');
   }
 }
+function setImageById(id, src) {
+  var element = document.getElementById(id);
+  if (element) {
+    element.src = src;
+  } else {
+    console.warn('Element with id "' + id + '" not found in DOM.');
+  }
+}
 // END   HELPERS
 // START FUNCTIONS
 function pickRandomRecipeExceptId(recipes, id = null) {
@@ -17,19 +25,30 @@ function pickRandomRecipeExceptId(recipes, id = null) {
     return pickRandomRecipeExceptId(recipes, id);
   }
 }
+function updateTimeWarning(recipe) {
+  if (+recipe.cooktime + +recipe.preptime >= 45) {
+    document.getElementById("time-warning").classList.remove("d-none");
+  } else {
+    document.getElementById("time-warning").classList.add("d-none");
+  }
+}
 function updateReciteData(recipe) {
-  document.getElementById("recipe-name").innerText = recipe.name;
-  document.getElementById("recipe-description").innerText = recipe.description;
-  document.getElementById("difficulty-badge").innerText = recipe.difficulty;
-  document.getElementById("category-badge").innerText = recipe.category;
-  document.getElementById("rating-average").innerText = recipe.rating.average;
-  document.getElementById(
-    "rating-quantity"
-  ).innerText = `(${recipe.rating.count} reviews)`;
-  document.getElementById("preptime").innerText = `${recipe.preptime} mins`;
-  document.getElementById("cooktime").innerText = `${recipe.cooktime} mins`;
-  document.getElementById("servings").innerText = `${recipe.servings} people`;
-  document.getElementById("recipe-image").src = recipe.image;
+  setTextById("recipe-name", recipe.name);
+  setTextById("recipe-description", recipe.description);
+  setTextById("difficulty-badge", recipe.difficulty);
+  setTextById("category-badge", recipe.category);
+  setTextById("rating-average", recipe.rating.average);
+  setTextById("rating-quantity", `(${recipe.rating.count} reviews)`);
+  setTextById("preptime", `${recipe.preptime} mins`);
+  setTextById("cooktime", `${recipe.cooktime} mins`);
+  setTextById("servings", `${recipe.servings} people`);
+  setTextById("calories", recipe.nutrition.calories);
+  setTextById("carbohydrates", recipe.nutrition.carbohydrates);
+  setTextById("protein", recipe.nutrition.protein);
+  setTextById("fat", recipe.nutrition.fat);
+  setTextById("fiber", recipe.nutrition.fiber);
+  setTextById("sodium-value", recipe.nutrition.sodium);
+  setImageById("recipe-image", recipe.image);
   document.getElementById("ingredients-list").innerHTML = recipe.ingredients
     .map((ingredient, index) => {
       return `<li class="d-flex align-items-center gap-2-half">
@@ -50,13 +69,6 @@ function updateReciteData(recipe) {
             </li>`;
     })
     .join("");
-
-  setTextById("calories", recipe.nutrition.calories);
-  setTextById("carbohydrates", recipe.nutrition.carbohydrates);
-  setTextById("protein", recipe.nutrition.protein);
-  setTextById("fat", recipe.nutrition.fat);
-  setTextById("fiber", recipe.nutrition.fiber);
-  setTextById("sodium-value", recipe.nutrition.sodium);
   document.getElementById("tips-list").innerHTML = recipe.tips
     .map((tip) => {
       return `
@@ -72,11 +84,7 @@ function updateReciteData(recipe) {
     </div>`;
     })
     .join("");
-    if (+recipe.cooktime + +recipe.preptime >= 45) {
-        document.getElementById("time-warning").classList.remove("d-none");
-    } else {
-        document.getElementById("time-warning").classList.add("d-none");
-    }
+  updateTimeWarning(recipe);
 }
 // END   FUNCTIONS
 // START DATA
@@ -565,16 +573,16 @@ var recipes = [
   },
 ];
 // END   DATA
-// Start Initial Load
+// START INITIAL LOAD
 var recipe = pickRandomRecipeExceptId(recipes);
 updateReciteData(recipe);
-// End   Initial Load
+// End   INITIAL LOAD
 // START EVENT LISTENERS
 document
-.getElementById("try-another-btn")
-.addEventListener("click", function () {
+  .getElementById("try-another-btn")
+  .addEventListener("click", function () {
     recipe = pickRandomRecipeExceptId(recipes, recipe.id);
     updateReciteData(recipe);
     document.getElementById("recipe").scrollIntoView({ behavior: "smooth" });
-});
+  });
 // END   EVENT LISTENERS
