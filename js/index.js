@@ -113,7 +113,7 @@ var recipes = [
       "Serve immediately with extra cheese and black pepper on top. Enjoy your authentic carbonara!",
     ],
     nutrition: {
-      calories: "520 kcal",
+      calories: "520kcal",
       carbohydrates: "28g",
       protein: "62g",
       fat: "18g",
@@ -163,7 +163,7 @@ var recipes = [
       "Bake for 45-60 minutes, or until bubbling and golden brown.",
     ],
     nutrition: {
-      calories: "650 kcal",
+      calories: "650kcal",
       carbohydrates: "45g",
       protein: "40g",
       fat: "35g",
@@ -211,7 +211,7 @@ var recipes = [
       "Season with salt and pepper. Serve hot with crusty bread.",
     ],
     nutrition: {
-      calories: "280 kcal",
+      calories: "280kcal",
       carbohydrates: "45g",
       protein: "15g",
       fat: "5g",
@@ -259,7 +259,7 @@ var recipes = [
       "Garnish with fresh cilantro and serve hot with rice or naan.",
     ],
     nutrition: {
-      calories: "580 kcal",
+      calories: "580kcal",
       carbohydrates: "15g",
       protein: "55g",
       fat: "35g",
@@ -307,7 +307,7 @@ var recipes = [
       "Bake for 9-11 minutes or until golden brown. Let cool on the baking sheet for 5 minutes before transferring to a wire rack.",
     ],
     nutrition: {
-      calories: "180 kcal",
+      calories: "180kcal",
       carbohydrates: "25g",
       protein: "2g",
       fat: "9g",
@@ -355,7 +355,7 @@ var recipes = [
       "Serve immediately or chill for later. Tastes best after 30 minutes of sitting.",
     ],
     nutrition: {
-      calories: "350 kcal",
+      calories: "350kcal",
       carbohydrates: "40g",
       protein: "12g",
       fat: "16g",
@@ -407,7 +407,7 @@ var recipes = [
       "Serve with a platter of garnishes.",
     ],
     nutrition: {
-      calories: "400 kcal",
+      calories: "400kcal",
       carbohydrates: "45g",
       protein: "35g",
       fat: "10g",
@@ -452,7 +452,7 @@ var recipes = [
       "Serve immediately with a side of vegetables.",
     ],
     nutrition: {
-      calories: "420 kcal",
+      calories: "420kcal",
       carbohydrates: "5g",
       protein: "40g",
       fat: "25g",
@@ -501,7 +501,7 @@ var recipes = [
       "Serve hot, traditionally with boiled potatoes or mashed potatoes.",
     ],
     nutrition: {
-      calories: "550 kcal",
+      calories: "550kcal",
       carbohydrates: "20g",
       protein: "45g",
       fat: "30g",
@@ -550,7 +550,7 @@ var recipes = [
       "Toss quickly to coat and cook until the sauce thickens slightly, about 1 minute. Serve immediately over rice.",
     ],
     nutrition: {
-      calories: "380 kcal",
+      calories: "380kcal",
       carbohydrates: "35g",
       protein: "25g",
       fat: "15g",
